@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai_tap</title>
+</head>
+<body>
+<form>
+    Amount:<br>
+    <input type="number" name="Amount" id="Amount"><br>
+    From Currency:<br>
+    <select name="From_Currency" id="From_currency">
+        <option value="viet-nam"> Việt Nam </option>
+    </select>
+    <br>
+    To Currency:<br>
+    <select name="To_Currency" id="To_currency">
+        <option value="usd"> USD </option>
+    </select>
+</form>
+<script>
+    function giatri() {
+        var s = document.getElementById("Amount").value;
+        var a = s*0.000043878894251864855;
+        alert("Result :" + a)
+    }
+</script>
+<button type="button" onclick="giatri();"> Convert </button>
+</body>
+</html>
