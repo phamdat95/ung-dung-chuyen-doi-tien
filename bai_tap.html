@@ -10,19 +10,26 @@
     <input type="number" name="Amount" id="Amount"><br>
     From Currency:<br>
     <select name="From_Currency" id="From_currency">
-        <option value="viet-nam"> Việt Nam </option>
+        <option value="euro" id="euro"> Euro(EUR) </option>
+        <option value="do-la-my" id="do_la_my"> Đô la mỹ(USD) </option>
     </select>
     <br>
-    To Currency:<br>
-    <select name="To_Currency" id="To_currency">
-        <option value="usd"> USD </option>
-    </select>
+    VND:<br>
+    <input type="text" name="VND" id="VND">
 </form>
 <script>
     function giatri() {
         var s = document.getElementById("Amount").value;
-        var a = s*0.000043878894251864855;
-        alert("Result :" + a)
+        var a = s/0.000043878894251864855;
+        var b = s*27400;
+        var Selected = document.getElementById("From_currency").value;
+        var optionSelected = document.getElementById("euro").value;
+        var optionSelected1 = document.getElementById("do_la_my").value;
+        if (optionSelected == Selected) {
+            document.getElementById("VND").value = b;
+        }
+        else
+            document.getElementById("VND").value=a;
     }
 </script>
 <button type="button" onclick="giatri();"> Convert </button>
